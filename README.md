@@ -1,6 +1,6 @@
 # Enterprise AI Support Platform
 
-A 12-session, ground-up build of a production-grade AI support agent using **LangGraph**, **Gemini 2.5 Flash**, and **FastAPI**. Each session adds a real capability on top of the previous one — no code is ever removed, only extended.
+A 12-session, ground-up build of a production-grade AI support agent using **LangGraph**, **Gemini 3.8 Flash**, and **FastAPI**. Each session adds a real capability on top of the previous one — no code is ever removed, only extended.
 
 ---
 
