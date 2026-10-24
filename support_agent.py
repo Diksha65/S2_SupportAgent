@@ -33,8 +33,8 @@ if not GOOGLE_API_KEY:
         "GOOGLE_API_KEY not set. Run: export GOOGLE_API_KEY='your-key-here'"
     )
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0)
-print("[System] Gemini 2.5 Flash initialized | temperature=0")
+llm = ChatGoogleGenerativeAI(model="gemini-3.8-flash", temperature=0)
+print("[System] Gemini 3.8 Flash initialized | temperature=0")
 
 
 # ══════════════════════════════════════════════════════════════════
@@ -147,6 +147,7 @@ MOCK_CRM = {
     },
 }
 
+# mock knowledge base articles for technical issues
 MOCK_KB = {
     'api': (
         'API troubleshooting guide: (1) Check rate limits — free tier: 100 req/min, '
@@ -342,7 +343,7 @@ def classify_node(state: SupportState) -> dict:
     ])
 
     # Layer 1 — normalize
-    raw = response.content.strip().lower().rstrip(".,!?")
+    raw = response.content[0].get('text').strip().lower().rstrip(".,!?")
 
     # Layer 2 — validate
     VALID = {"technical", "billing", "fraud", "general"}
